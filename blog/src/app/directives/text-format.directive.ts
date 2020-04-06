@@ -1,11 +1,10 @@
 import {Directive, ElementRef, HostListener} from '@angular/core';
 
 @Directive({
-  selector: '[textFormat]'
+  selector: '[TextFormat]'
 })
 export class TextFormatDirective {
-  constructor(private el: ElementRef) {
-  }
+  constructor(private el: ElementRef) { }
 
   @HostListener('blur') onBlur() {
     const value = this.el.nativeElement.value;

@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blog-home.component.scss']
 })
 export class BlogHomeComponent implements OnInit {
+  filterText: string;
 
   constructor() { }
 
