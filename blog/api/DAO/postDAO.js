@@ -2,7 +2,7 @@
 
 import mongoose from 'mongoose';
 import uniqueValidator from 'mongoose-unique-validator';
-import mongoConverter from '../service/mongoConverter';
+import mongoConverter from '../services/mongoConverter';
 import * as _ from "lodash";
 
 const postSchema = new mongoose.Schema({

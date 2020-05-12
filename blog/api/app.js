@@ -16,12 +16,10 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(cors());
 
-
 mongoose.connect(config.databaseUrl, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true}, (error) => {
   if (error) {
     console.error(error);
-  }
-  else {
+  } else {
     console.log('Connect with database established');
   }
 });
@@ -36,5 +34,5 @@ process.on('SIGINT', () => {
 
 routes(app);
 app.listen(config.port, () => {
-  console.info(`Server is running at ${config.port}`)
+	console.info(`Server is running at ${config.port}`)
 });
