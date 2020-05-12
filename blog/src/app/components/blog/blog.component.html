@@ -1,3 +1,5 @@
+{{ filterText }}
+<br>
 <selectize></selectize>
 <div *ngFor="let item of items$ | filter:filterText">
   <blog-item [id]="item.id" [image]="item.url" [text]="item.content">
