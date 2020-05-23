@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -12,6 +12,7 @@ import {BlogItemComponent} from './components/blog-item/blog-item.component';
 import {BlogItemTextComponent} from './components/blog-item-text/blog-item-text.component';
 import {BlogItemImageComponent} from './components/blog-item-image/blog-item-image.component';
 import {BlogItemDetailsComponent} from './components/blog-item-details/blog-item-details.component';
+import {AuthInterceptor} from './services/auth.interceptor';
 import {DataService} from "./services/data.service";
 import {SummaryPipe} from './pipes/summary.pipe';
 import {SearchBarComponent} from './shared/search-bar/search-bar.component';
@@ -21,6 +22,9 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { TextFormatDirective } from './directives/text-format.directive';
 import { SelectizeComponent } from './components/selectize/selectize.component';
 import { AddPostComponent } from './components/add-post/add-post.component';
+import {AuthService} from "./services/auth.service";
+import { LoginComponent } from './components/login/login.component';
+import { SingupComponent } from './components/singup/singup.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +44,8 @@ import { AddPostComponent } from './components/add-post/add-post.component';
     TextFormatDirective,
     SelectizeComponent,
     AddPostComponent,
+    LoginComponent,
+    SingupComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +53,15 @@ import { AddPostComponent } from './components/add-post/add-post.component';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [DataService],
+  providers: [
+    DataService,
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
