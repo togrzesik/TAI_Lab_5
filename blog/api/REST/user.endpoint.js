@@ -1,7 +1,7 @@
 'use strict';
 
 import business from '../business/business.container';
-import applicationException from '../service/applicationException';
+import applicationException from '../services/applicationException';
 import auth from '../middleware/auth';
 // import auth from '../middleware/auth';
 const admin = require('../middleware/admin');

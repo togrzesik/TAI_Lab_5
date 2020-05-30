@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../../services/auth.service";
 
 @Component({
-  selector: 'singup',
-  templateUrl: './singup.component.html',
-  styleUrls: ['./singup.component.scss']
+  selector: 'signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.scss']
 })
-export class SingupComponent implements OnInit {
+export class SignupComponent implements OnInit {
 
   public credentials = {
     name: '',

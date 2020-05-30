@@ -7,7 +7,7 @@ import {BlogHomeComponent} from "./components/blog-home/blog-home.component";
 import {AddPostComponent} from "./components/add-post/add-post.component";
 import {AuthGuardService} from "./services/auth-guard.service";
 import {LoginComponent} from "./components/login/login.component";
-import {SingupComponent} from "./components/singup/singup.component";
+import {SignupComponent} from "./components/signup/signup.component";
 
 
 const routes: Routes = [
@@ -38,7 +38,7 @@ const routes: Routes = [
   },
   {
     path: 'signup',
-    component: SingupComponent
+    component: SignupComponent
   }
 ];
 

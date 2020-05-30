@@ -2,8 +2,8 @@
 
 import mongoose from 'mongoose';
 import * as _ from 'lodash';
-import applicationException from '../service/applicationException';
-import mongoConverter from '../service/mongoConverter';
+import applicationException from '../services/applicationException';
+import mongoConverter from '../services/mongoConverter';
 
 
 const passwordSchema = new mongoose.Schema({
